@@ -15,6 +15,15 @@ pipeline {
              
         }
         
+         stage ('Code Covergae Stage') {
+
+            steps {
+                    echo 'This is for running Code coverage check on the code base.' 
+                    bat 'mvn jacoco:report' 
+                  }
+             
+        }
+        
          stage ('Sonar Stage') {
 
             steps {
