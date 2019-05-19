@@ -9,16 +9,10 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                  sh 'mvn clean compile'
+                  echo 'This is a minimal pipeline.' 
                   }
         }
 
-        stage ('Testing Stage') {
-
-            steps {
-                    sh 'mvn test'
-                  }
-        }
        
     }
 }
