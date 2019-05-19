@@ -9,8 +9,12 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                    echo 'This is a minimal pipeline.' 
+                    echo 'This is a for building the Maven codebase.' 
                     bat 'mvn -Dmaven.test.failure.ignore=true install' 
+                  }
+              steps {
+                    echo 'This is for running Sonar Qube on the code base.' 
+                    bat 'mvn sonar:sonar' 
                   }
         }
 
